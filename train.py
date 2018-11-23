@@ -69,8 +69,8 @@ tf.app.flags.DEFINE_boolean('log_device_placement', False, 'Log placement of ops
 FLAGS = tf.app.flags.FLAGS
 
 def create_model(session, FLAGS):
-
-    config = OrderedDict(sorted(FLAGS.__flags.items()))
+    print(FLAGS)
+    config = OrderedDict(sorted(FLAGS.flag_values_dict().items()))
     model = Seq2SeqModel(config, 'train')
 
     ckpt = tf.train.get_checkpoint_state(FLAGS.model_dir)

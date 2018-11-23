@@ -29,7 +29,7 @@ class Seq2SeqModel(object):
     def __init__(self, config, mode):
 
         assert mode.lower() in ['train', 'decode']
-
+        print(config)
         self.config = config
         self.mode = mode.lower()
 
@@ -42,7 +42,6 @@ class Seq2SeqModel(object):
        
         self.num_encoder_symbols = config['num_encoder_symbols']
         self.num_decoder_symbols = config['num_decoder_symbols']
-
         self.use_residual = config['use_residual']
         self.attn_input_feeding = config['attn_input_feeding']
         self.use_dropout = config['use_dropout']

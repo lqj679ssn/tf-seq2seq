@@ -1,0 +1,5 @@
+python decode.py --model_path model/translate.ckpt-180 \
+--max_decode_step 300 \
+--decode_batch_size 30 \
+--decode_input data/test.bpe.input \
+--decode_output data/test.bpe.input.trans
